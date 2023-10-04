@@ -1,6 +1,6 @@
 // Tiles & Art
 BITMAP,tiles,forest_tiles.png
-BITMAP,back,back.jpg
+//BITMAP,back,back.jpg
 BITMAP,stairs,stairs.png
 BITMAP,title,title.png
 
