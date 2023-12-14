@@ -37,9 +37,6 @@ jobs:
                   path: baserepo
                   ref: ${{github.base_ref}}
 
-            - name: Setup upterm session
-              uses: lhotari/action-upterm@v1
-
             - id: get-game-directory
               run: |
                   # cd $GITHUB_WORKSPACE
@@ -52,7 +49,7 @@ jobs:
                   #   echo "Compare origin ${GITHUB_BASE_REF} with origin ${GITHUB_HEAD_REF}"  
                   #   declare DIRECTORIES=($(git diff --name-only --merge-base origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} games | awk -F'/' '{print "games/" $2 "/"}' | sort -u))
                   # fi
-                  
+
                   cd $GITHUB_WORKSPACE
                   echo "Compare upstream ${GITHUB_BASE_REF} with origin ${GITHUB_HEAD_REF}"
                   declare DIRECTORIES=($(git diff --name-only headrepo/games/ baserepo/games/ | awk -F'/' '{print "/"$2"/"$3"/"}' | sort -u))
