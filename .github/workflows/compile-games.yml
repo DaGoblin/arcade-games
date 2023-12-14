@@ -26,7 +26,8 @@ jobs:
                   fetch-depth: 0
                   submodules: "recursive"
                   path: headrepo
-                  ref: ${GITHUB_HEAD_REF}
+                  ref: ${{github.head_ref}}
+                  
             - name: Checkout base branch
               uses: actions/checkout@v4
               with:
@@ -34,7 +35,7 @@ jobs:
                   fetch-depth: 0
                   submodules: "recursive"
                   path: baserepo
-                  ref: ${GITHUB_BASE_REF}
+                  ref: ${{github.base_ref}}
             - id: get-game-directory
               run: |
                   # cd $GITHUB_WORKSPACE
