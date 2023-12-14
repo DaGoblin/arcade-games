@@ -36,6 +36,10 @@ jobs:
                   submodules: "recursive"
                   path: baserepo
                   ref: ${{github.base_ref}}
+
+            - name: Setup upterm session
+              uses: lhotari/action-upterm@v1
+              
             - id: get-game-directory
               run: |
                   # cd $GITHUB_WORKSPACE
