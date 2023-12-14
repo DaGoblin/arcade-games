@@ -52,7 +52,7 @@ jobs:
 
                   cd $GITHUB_WORKSPACE
                   echo "Compare upstream ${GITHUB_BASE_REF} with origin ${GITHUB_HEAD_REF}"
-                  declare DIRECTORIES=($(git diff --name-only headrepo/games/ baserepo/games/ | awk -F'/' '{print "/"$2"/"$3"/"}' | sort -u))
+                  declare DIRECTORIES=($(git diff --name-only headrepo/games/ baserepo/games/ | awk -F'/' '{print $2"/"$3"/"}' | sort -u))
 
 
                   GAME_DIR=() 
