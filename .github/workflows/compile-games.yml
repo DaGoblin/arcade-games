@@ -75,7 +75,7 @@ jobs:
                   for dir in "${GAME_DIR[@]}"
                   do
                       echo "$dir"
-                      if [ -f "$dir"*.csproj ]; then
+                      if [ -f headrepo/"$dir"*.csproj ]; then
                         CSharpFound=true #if any program has a .csproj file, set the variable to true
                       else
                         NoCSharpFound=true #if any program does not have a .csproj file, set the variable to true
