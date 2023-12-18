@@ -57,9 +57,10 @@ jobs:
 
                   GAME_DIR=() 
 
+                  # Check to make sure directory structure  is correct and not null
                   for dir in "${DIRECTORIES[@]}"
                   do
-                      if [ $(expr length ${dir//[!\/]}) -eq 2  ]; then
+                      if [ $(expr length ${dir//[!\/]}) -eq 2  ] && [ "$dir" != "dev/null/" ]; then
                           GAME_DIR+=($dir)
                       else 
                         echo skipping: $dir 
